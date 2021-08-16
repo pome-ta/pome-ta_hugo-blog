@@ -1,5 +1,5 @@
 # 公開するページのURL
-baseURL = "https://kato-k.github.io/hugo-blog-template"
+baseURL = "https://pome-ta.github.io/pome-ta_hugo-blog"
 
 languageCode = "ja"
 DefaultContentLanguage = "ja"
@@ -14,8 +14,8 @@ paginate = 20
 
 # 自己紹介
 [Author]
-    name = "Author"
-    bio = "ここに自己紹介を入れることができます"
+    name = "pome-ta"
+    bio = "よろしくお願いします。"
     avatar = "img/avatar.png"
 
 [Params]
@@ -28,12 +28,12 @@ paginate = 20
 
 # ページのテーマカラー
 [Params.style.vars]
-  highlightColor = "#e22d30"
+  highlightColor = "#800000"
 
 # SNS等のユーザー名
 [Params.widgets.social]
-  twitter = "uvrub"
-  github = "kato-k"
+  twitter = "pome_ta93"
+  github = "pome-ta"
 
 [Params.sidebar]
     home = "right"
