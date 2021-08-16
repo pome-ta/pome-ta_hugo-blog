@@ -28,7 +28,7 @@ paginate = 20
 
 # ページのテーマカラー
 [Params.style.vars]
-  highlightColor = "#800000"
+  highlightColor = "#708090"
 
 # SNS等のユーザー名
 [Params.widgets.social]
