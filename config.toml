@@ -7,7 +7,7 @@ HasCJKLanguage = true
 enableRobotsTXT = true
 
 # ブログのタイトル
-title = "hugo-blog-template"
+title = "pome-ta_hugo-blog"
 
 theme = "mainroad"
 paginate = 20
