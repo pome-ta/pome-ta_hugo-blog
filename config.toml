@@ -16,11 +16,11 @@ paginate = 20
 [Author]
     name = "pome-ta"
     bio = "よろしくお願いします。"
-    avatar = "img/avatar.png"
+    avatar = "img/avatar.jpg"
 
 [Params]
     customCSS = ["css/custom.css"]
-    copyright = "Author"
+    copyright = "pome-ta"
     readmore = true
     authorbox = true
     post_meta = ["date", "categories"]
