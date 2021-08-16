@@ -8,8 +8,7 @@ menu: main
 
 # HUGO でblog をはじめる
 
-Twitter で、[HUGOとGitHub(Actions/Pages)で爆速ブログ作成](https://zenn.dev/kato_k/articles/66531db0c4024d) が流れてきた。
-
+Twitter で、[HUGOとGitHub(Actions/Pages)で爆速ブログ作成](https://zenn.dev/kato_k/articles/66531db0c4024d) と、流れてきた。
 
 速攻導入[^1]をして自分のリポジトリでblog 化してみた。
 
@@ -20,7 +19,9 @@ Twitter で、[HUGOとGitHub(Actions/Pages)で爆速ブログ作成](https://zen
 
 ## 導入前夜の言い訳
 
+私の特性として、
 qiita はアカウント作成だけ。zenn はアカウント作成し、ちょっと下書きしただけで放置[^2]。
+
 
 
 GitHub のリポジトリを使ってblog ができることは認知していたが
@@ -32,7 +33,6 @@ GitHub のリポジトリを使ってblog ができることは認知してい�
 
 
 GitHub Actions や、そもそものGitHub の活用とか、基礎教養がないのでハードルが高かった
-
 (無駄に「携帯だけでできないだろうか？🤔」とか考えるのが悪い)
 
 
@@ -53,7 +53,7 @@ HUGO ベースとのことで、ここを起点に自分なりにやってみた
 などなど・・・
 
 
-> 解決できない課題
+> *解決できない課題*<br>
 >   ・記事を書くのがめんどい
 
 ほんと、それでヤンス。。。
