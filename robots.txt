@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://kato-k.github.io/hugo-blog-templatesitemap.xml
+Sitemap: https://pome-ta.github.io/pome-ta_hugo-blogsitemap.xml
