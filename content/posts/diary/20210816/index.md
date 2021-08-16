@@ -44,7 +44,9 @@ GitHub Actions や、そもそものGitHub の活用とか、基礎教養がな�
 
 HUGO ベースとのことで、ここを起点に自分なりにやってみたいことをテストしてみようかな
 
+- HUGO と [kato-k / hugo-blog-template](https://github.com/kato-k/hugo-blog-template) の機能の切り分け認識
 - `favicon` 設定
+- リンク先のサムネイル表示
 - いい感じにレイアウトをいじる
 - Actions の内容を見てみる
 - 携帯での運用フロー
@@ -53,7 +55,12 @@ HUGO ベースとのことで、ここを起点に自分なりにやってみた
 などなど・・・
 
 
-> *解決できない課題*<br>
+[HUGOとGitHub(Actions/Pages)で爆速ブログ作成](https://zenn.dev/kato_k/articles/66531db0c4024d) に書いてあった
+
+> *解決できない課題*
+
+の
+
 >   ・記事を書くのがめんどい
 
 ほんと、それでヤンス。。。
