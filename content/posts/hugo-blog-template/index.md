@@ -1,6 +1,6 @@
 ---
-title: "HUGO-tem Sample Page"
-date: 2021-09-16
+title: "HUGO-temp Sample Page"
+date: 2021-08-16
 categories: ["hugo"]
 tags: ["markdown", "github"]
 menu: main
@@ -40,5 +40,17 @@ int main() {
   return 0;
 }
 ```
+
+``` .py
+a: list = [2, 3, 4, 5]]
+
+for i in range(a):
+  value = a[i]]
+  print(value)
+
+```
+
+
+
 
 {{<figure src="./image.jpeg" alt="モード" width="75%">}}
