@@ -10,6 +10,8 @@ menu: main
 
 > 2021/08/16: 公開
 
+{{<figure src="./image.jpeg" alt="モード" width="75%">}}
+
 # HUGOのサンプル
 
 # h1
