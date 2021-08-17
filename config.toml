@@ -9,7 +9,7 @@ enableRobotsTXT = true
 summaryLength = 108
 
 # ブログのタイトル
-title = "ぽめ太のHUGOブログ"
+title = "pome-ta_hugo_blog"
 
 theme = "mainroad"
 paginate = 20
