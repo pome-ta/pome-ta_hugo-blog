@@ -6,10 +6,10 @@ DefaultContentLanguage = "ja"
 HasCJKLanguage = true
 enableRobotsTXT = true
 # サマリの長さ
-summaryLength = 120
+summaryLength = 108
 
 # ブログのタイトル
-title = "pome-ta_hugo-blog"
+title = "ぽめ太のHUGOブログ"
 
 theme = "mainroad"
 paginate = 20
