@@ -5,6 +5,8 @@ languageCode = "ja"
 DefaultContentLanguage = "ja"
 HasCJKLanguage = true
 enableRobotsTXT = true
+# サマリの長さ
+summaryLength = 120
 
 # ブログのタイトル
 title = "pome-ta_hugo-blog"
@@ -28,7 +30,7 @@ paginate = 20
 
 # ページのテーマカラー
 [Params.style.vars]
-  highlightColor = "#708090"
+  highlightColor = "#800000"
 
 # SNS等のユーザー名
 [Params.widgets.social]
