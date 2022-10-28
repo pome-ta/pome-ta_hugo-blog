@@ -6,3 +6,9 @@ tags: ["ubuntu"]
 menu: main
 ---
 # Ubuntu を入れた
+
+USB メモリ8GB　が、500円以下で買えて驚き
+
+mac book pro のjis キー対応が面倒くさい
+
+それ以外は基本的に問題なさそう
