@@ -7,3 +7,9 @@ menu: main
 ---
 
 # Pythonista3 でVison Framework
+
+## Vison Framework の整理
+
+### Pythonista3 で実装するなら
+
+## 静止画像でface tracking
