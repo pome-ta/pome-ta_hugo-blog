@@ -3,19 +3,18 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>Linux - pome-ta_hugo-blog</title>
+<title>objc_util を調査してみる - pome-ta_hugo-blog</title>
 <script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content>
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="Linux">
-<meta name=twitter:description content>
+<meta name=twitter:title content="objc_util を調査してみる">
+<meta name=twitter:description content="Pythonista3 のobjc_util モジュール調査 Pythonista3 に入っているobjc_util.py を写経しつつ構造の理解をすすめる 調査 objc_util.py そのもの rubicon-objc beeware/rubicon-objc: A bridge interface between Python and Objective-C. Rubicon Objective-C — Rubicon 0.4.2 documentation rubicon-objc · PyPI 現状 macOS で実行(import ui をコメントアウト) すると、NSS">
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=dns-prefetch href=//fonts.googleapis.com>
 <link rel=dns-prefetch href=//fonts.gstatic.com>
 <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 <link rel=stylesheet href=/pome-ta_hugo-blog/css/style.css>
 <link rel=stylesheet href=/pome-ta_hugo-blog/css/custom.css>
-<link rel=alternate type=application/rss+xml href=/pome-ta_hugo-blog/categories/linux/index.xml title=pome-ta_hugo-blog>
 <link rel="shortcut icon" href=/pome-ta_hugo-blog/favicon.ico>
 </head>
 <body class=body>
@@ -44,7 +43,7 @@
 <span class=menu__text>HUGO-temp Sample Page</span>
 </a>
 </li>
-<li class=menu__item>
+<li class="menu__item menu__item--active">
 <a class=menu__link href=/pome-ta_hugo-blog/posts/diary/20221029/>
 <span class=menu__text>objc_util を調査してみる</span>
 </a>
@@ -100,27 +99,69 @@
 </header>
 <div class="wrapper flex">
 <div class=primary>
-<main class="main list" role=main>
-<header class=main__header>
-<h1 class=main__title>Linux</h1>
-</header><article class="list__item post">
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/pome-ta_hugo-blog/posts/diary/20221023/ rel=bookmark>
-Ubuntu をインストール
-</a>
-</h2>
-<div class="list__meta meta">
+<main class=main role=main>
+<article class=post>
+<header class=post__header>
+<h1 class=post__title>objc_util を調査してみる</h1>
+<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-10-23T00:00:00Z>October 23, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/pome-ta_hugo-blog/categories/diary/ rel=category>diary</a>, <a class=meta__link href=/pome-ta_hugo-blog/categories/linux/ rel=category>Linux</a>
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2022-10-29T00:00:00Z>October 29, 2022</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/pome-ta_hugo-blog/categories/diary/ rel=category>diary</a>, <a class=meta__link href=/pome-ta_hugo-blog/categories/pythonista3/ rel=category>Pythonista3</a>
 </span>
 </div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-Ubuntu を入れた USB メモリ8GB が、500円以下で買えて驚き mac book pro のjis キー対応が面倒くさい それ以外は基本的に問題ない？ 参照したサイトとか入力する
+</header><div class="content post__content clearfix">
+<h1 id=pythonista3-のobjc_util-モジュール調査>Pythonista3 のobjc_util モジュール調査</h1>
+<p>Pythonista3 に入っている<code>objc_util.py</code> を写経しつつ構造の理解をすすめる</p>
+<h2 id=調査>調査</h2>
+<ul>
+<li><code>objc_util.py</code> そのもの</li>
+<li>rubicon-objc
+<ul>
+<li><a href=https://github.com/beeware/rubicon-objc>beeware/rubicon-objc: A bridge interface between Python and Objective-C.</a></li>
+<li><a href=https://rubicon-objc.readthedocs.io/en/latest/index.html>Rubicon Objective-C — Rubicon 0.4.2 documentation</a></li>
+<li><a href=https://pypi.org/project/rubicon-objc/>rubicon-objc · PyPI</a></li>
+</ul>
+</li>
+</ul>
+<h2 id=現状>現状</h2>
+<p>macOS で実行(<code>import ui</code> をコメントアウト) すると、<code>NSString</code> など、エラー吐く</p>
+<p>Python2系 での分岐があるけども、基本3系のみを想定とした書き方にする</p>
+<h3 id=objcclass-を実装><code>ObjCClass</code> を実装</h3>
+<p><code>cdll,LoadLibrary</code> に、名前入れると呼べる？</p>
+<p>3系だと、<code>.encode('ascii')</code> で変換が必要なんかな？</p>
+<p><code>NSObject</code>, <code>b'NSObject'</code> こんな感じになるのね</p>
+<h4 id=ctypescdllloadlibrary-ってどう呼び出してる><code>ctypes.cdll.LoadLibrary</code> ってどう呼び出してる？</h4>
+<p>引数を直で書き込めているけど、どこから取得して呼び出してるんか？</p>
+<p><a href=https://docs.python.org/ja/3.9/library/ctypes.html#ctypes.CDLL>cdll | ctypes &mdash; Pythonのための外部関数ライブラリ — Python 3.9.12 ドキュメント</a></p>
+<p><a href=https://docs.python.org/ja/3.9/library/ctypes.html#ctypes.LibraryLoader.LoadLibrary>LoadLibrary | ctypes &mdash; Pythonのための外部関数ライブラリ — Python 3.9.12 ドキュメント</a></p>
+<p>共有ライブラリ場所？</p>
+<h3 id=わからないところ>わからないところ</h3>
+<p><code>LP64</code> => <code>True</code> を返す</p>
 </div>
+<footer class=post__footer>
+<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<ul class=tags__list>
+<li class=tags__item>
+<a class="tags__link btn" href=/pome-ta_hugo-blog/tags/python/ rel=tag>Python</a>
+</li>
+<li class=tags__item>
+<a class="tags__link btn" href=/pome-ta_hugo-blog/tags/objc_util/ rel=tag>objc_util</a>
+</li>
+</ul>
+</div>
+</footer>
 </article>
 </main>
+<div class="authorbox clearfix">
+<figure class=authorbox__avatar>
+<img alt="pome-ta avatar" src=/pome-ta_hugo-blog/img/avatar.jpg class=avatar height=90 width=90>
+</figure>
+<div class=authorbox__header>
+<span class=authorbox__name>pome-taについて</span>
+</div>
+<div class=authorbox__description>
+よろしくお願いします。
+</div>
+</div>
 </div>
 <aside class=sidebar><div class="widget-search widget">
 <form class=widget-search__form role=search method=get action=https://google.com/search>
