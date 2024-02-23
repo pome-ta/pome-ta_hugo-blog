@@ -12,3 +12,4 @@ menu: main
   - dotfile
   - ローカルにあるものの移動
     - GitHub にup できるのであればやる
+    - brew の一覧を出して、事前整理するか
