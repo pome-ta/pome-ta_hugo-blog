@@ -3,19 +3,18 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>GLSL - pome-ta_hugo-blog</title>
+<title>2024年4月19日（金） - pome-ta_hugo-blog</title>
 <script>(function(a,b){a[b]=a[b].replace("no-js","js")})(document.documentElement,"className")</script>
 <meta name=description content>
 <meta name=twitter:card content="summary">
-<meta name=twitter:title content="GLSL">
-<meta name=twitter:description content>
+<meta name=twitter:title content="2024年4月19日（金）">
+<meta name=twitter:description content="何かとアウトプットする必要性が出てきている気がしている 個人として、Rubion-Objc (表記の揺らぎをどうにかせな) のまとめ的なアウトプットもあるが、仕事としても、アウトプットを意識する必要が出てきている気がしてい">
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=dns-prefetch href=//fonts.googleapis.com>
 <link rel=dns-prefetch href=//fonts.gstatic.com>
 <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
 <link rel=stylesheet href=/pome-ta_hugo-blog/css/style.css>
 <link rel=stylesheet href=/pome-ta_hugo-blog/css/custom.css>
-<link rel=alternate type=application/rss+xml href=/pome-ta_hugo-blog/tags/glsl/index.xml title=pome-ta_hugo-blog>
 <link rel="shortcut icon" href=/pome-ta_hugo-blog/favicon.ico>
 </head>
 <body class=body>
@@ -39,7 +38,7 @@
 <span class=menu__text>2024年4月15日のメモ的な日誌</span>
 </a>
 </li>
-<li class=menu__item>
+<li class="menu__item menu__item--active">
 <a class=menu__link href=/pome-ta_hugo-blog/posts/diary/20240419/>
 <span class=menu__text>2024年4月19日（金）</span>
 </a>
@@ -150,30 +149,67 @@
 </header>
 <div class="wrapper flex">
 <div class=primary>
-<main class="main list" role=main>
-<header class=main__header>
-<h1 class=main__title>GLSL</h1>
-</header><article class="list__item post">
-<header class=list__header>
-<h2 class="list__title post__title">
-<a href=/pome-ta_hugo-blog/posts/diary/20230311/ rel=bookmark>
-あれやこれやと、書き落としていく所存でありたい
-</a>
-</h2>
-<div class="list__meta meta">
+<main class=main role=main>
+<article class=post>
+<header class=post__header>
+<h1 class=post__title>2024年4月19日（金）</h1>
+<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2023-03-11T00:00:00Z>March 11, 2023</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/pome-ta_hugo-blog/categories/diary/ rel=category>diary</a>, <a class=meta__link href=/pome-ta_hugo-blog/categories/output/ rel=category>output</a>
+<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class=meta__text datetime=2024-04-19T00:00:00Z>April 19, 2024</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=/pome-ta_hugo-blog/categories/diary/ rel=category>diary</a>
 </span>
 </div></div>
-</header>
-<div class="content list__excerpt post__content clearfix">
-メモ魔にでもなりたい所存 iPhone でStable Diffusion の実装実験をやっていたけども なんだか無理そうだし、ストレージが逼迫してしまうので、しれっとフェードアウト。 GLSL でのランダムやノイズの検証のために、Python 上で確認したいモチ
+</header><div class="content post__content clearfix">
+<h2 id=何かとアウトプットする必要性が出てきている気がしている>何かとアウトプットする必要性が出てきている気がしている</h2>
+<p>個人として、Rubion-Objc (表記の揺らぎをどうにかせな) のまとめ的なアウトプットもあるが、仕事としても、アウトプットを意識する必要が出てきている気がしている。</p>
+<p>転職を想定している。ということもあるが、LookerStudio という新しい技術習得の機会も得たので、何かと書き落とすことがメリットに感じられるようになっている。</p>
+<h3 id=lookerstudio>LookerStudio</h3>
+<p>できそうで、微妙にできないことが発生している状態でちょっと気持ち悪い。ビボットテーブルで表現することを想定していたが、列と行を連携とした並び替えがどうにもうまく行かない感じ。
+全然良くないけども、spreadsheet で無理やりこねくり回してレイアウト組んだ方がやりやすさはある。
+できる範囲で最大なものをチャレンジすることも必要かもしれない。。。</p>
+<p>とはいえ、どんなことをしたくて、どうできるのか？というところから手探りではあるので、なかなかの新鮮さはある。属人化回避のためとしての、ドキュメントの書き落としは色々な意味で必要。</p>
+<h3 id=障害説明>障害説明</h3>
+<p>本当に、色々と手伝いをいただきながら、転職書類をすすめているが、提示された障害説明の文章がなかなか思いつかない。</p>
+<p>なんとなく、質問として出されている意図を必要以上に自分自身として感じてしまって、頭の中で行ったり来たりしている感じ。SOS を求めたが、こんなにずるずると手がかかってしまって本当に申し訳ない気持ち。</p>
+<p>久々の言語化でもあるので、これもまたいい訓練としてやっていきたいと思う。</p>
+<h2 id=それでいて全然アウトプットの進捗はない>それでいて、全然アウトプットの進捗はない</h2>
+<p>Rubicon 関係のアウトプットをしたい内容が溜まっている。Zenn にドラフトとして出しているが、なんとなくカッコつけているのか、書き始められない状態ではある。</p>
+<p>確実に、閲覧数など皆無に等しいのだから、気にせずに書けばいいのである。</p>
+<h3 id=記事のドラフト>記事のドラフト</h3>
+<h4 id=delegate-やら>delegate やら</h4>
+<p>最初に出した記事の、追記というか続編というか。という内容のものが残っている。</p>
+<p>前回は、Class の宣言のみだったので、UIKit を使っていく中での、最低限の機能面を紹介していきたい。</p>
+<p>ぶっちゃけたところ、リポジトリのコードで説明できている。という気分であるが、そこまでネトストする人なんて限られているのを自分自身で強く自覚した方がいいと思う。
+そんなことで、この記事が書き終えられれば、スタートラインには立てるとう感じにはなると思う。</p>
+<h4 id=audio-関係>audio 関係</h4>
+<p>アドカレの増補改訂版として、Block が成功したので、書いていきたいという気兼ねはある。なんとなく、アドカレのアンサー的な演出にしたいなんて思ってしまっていて、ずるずると進捗が無い感じになっている。</p>
+<p>しかし、これを書くのには、上のdelegate を紹介した方がいいか。。。（View を表示するための前提として）なんて考えてしまっていて、締まりが悪い。</p>
+<h4 id=他のニーズがありそうなもの>他のニーズがありそうなもの？</h4>
+<p>そもそも、ニーズもクソもないが、要望があれば、書きたいけどもね。。。。</p>
+<h2 id=とにもかくにも>とにもかくにも</h2>
+<p>やはり、このキーボードはムニムニしてて叩き心地悪いと思う</p>
 </div>
-<div class="list__footer clearfix">
-<a class="list__footer-readmore btn" href=/pome-ta_hugo-blog/posts/diary/20230311/>続きを読む…</a>
+<footer class=post__footer>
+<div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
+<ul class=tags__list>
+<li class=tags__item>
+<a class="tags__link btn" href=/pome-ta_hugo-blog/tags/memo/ rel=tag>memo</a>
+</li>
+</ul>
 </div>
+</footer>
 </article>
 </main>
+<div class="authorbox clearfix">
+<figure class=authorbox__avatar>
+<img alt="pome-ta avatar" src=/pome-ta_hugo-blog/img/avatar.jpg class=avatar height=90 width=90>
+</figure>
+<div class=authorbox__header>
+<span class=authorbox__name>pome-taについて</span>
+</div>
+<div class=authorbox__description>
+よろしくお願いします。
+</div>
+</div>
 </div>
 <aside class=sidebar><div class="widget-search widget">
 <form class=widget-search__form role=search method=get action=https://google.com/search>
