@@ -4,6 +4,7 @@ date: 2024-04-20
 categories: ["diary" ]
 tags: ["memo"]
 menu: main
+draft: true
 ---
 
 ## ダラダラと続く
