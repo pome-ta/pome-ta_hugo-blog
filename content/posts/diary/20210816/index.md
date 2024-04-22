@@ -4,6 +4,7 @@ date: 2021-08-16
 categories: ["diary"]
 tags: ["markdown", "github"]
 menu: main
+draft: false
 ---
 
 # HUGO でblog をはじめる

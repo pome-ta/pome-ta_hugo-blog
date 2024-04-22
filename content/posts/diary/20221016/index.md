@@ -4,6 +4,7 @@ date: 2022-10-16
 categories: ["diary", "money", "life", "plan"]
 tags: ["life", "money", "plan"]
 menu: main
+draft: true
 ---
 # ファイナンシャルプランナーがやってきた
 

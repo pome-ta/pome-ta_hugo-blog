@@ -4,6 +4,7 @@ date: 2022-10-29
 categories: ["diary", "Pythonista3"]
 tags: ["Python", "objc_util"]
 menu: main
+draft: false
 ---
 
 # Pythonista3 のobjc_util モジュール調査

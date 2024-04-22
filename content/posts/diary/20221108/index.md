@@ -4,6 +4,7 @@ date: 2022-11-08
 categories: ["diary", "Pythonista3", "Qiita", "Text"]
 tags: ["Python", "Markdown", "Qiita"]
 menu: main
+draft: false
 ---
 
 

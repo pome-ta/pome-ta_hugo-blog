@@ -4,6 +4,7 @@ date: 2021-08-17
 categories: ["diary"]
 tags: ["markdown", "github", "HUGO"]
 menu: main
+draft: false
 ---
 
 

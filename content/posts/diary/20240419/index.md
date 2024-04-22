@@ -4,6 +4,7 @@ date: 2024-04-19
 categories: ["diary" ]
 tags: ["memo"]
 menu: main
+draft: true
 ---
 
 ## 何かとアウトプットする必要性が出てきている気がしている

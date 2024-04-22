@@ -4,6 +4,7 @@ date: 2024-02-23
 categories: ["diary", "macOS" ]
 tags: ["memo", " dotfile", "macOS", "upgrade", "update"]
 menu: main
+draft: false
 ---
 
 # macOS をアプデするぞ

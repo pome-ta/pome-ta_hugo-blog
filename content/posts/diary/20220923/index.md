@@ -4,6 +4,7 @@ date: 2022-09-23
 categories: ["diary", "coding"]
 tags: ["coding", "ADHD"]
 menu: main
+draft: true
 ---
 
 # 整理整頓とcoding

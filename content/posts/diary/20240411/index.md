@@ -4,6 +4,7 @@ date: 2024-04-11
 categories: ["diary" ]
 tags: ["memo"]
 menu: main
+draft: true
 ---
 
 ## 24年2月ころ

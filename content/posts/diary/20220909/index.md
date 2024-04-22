@@ -4,6 +4,7 @@ date: 2022-09-09
 categories: ["diary"]
 tags: ["markdown", "github", "HUGO", " spreadsheet", "gas"]
 menu: main
+draft: false
 ---
 
 # リハビリをおこなう

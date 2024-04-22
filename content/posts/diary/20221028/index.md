@@ -4,6 +4,7 @@ date: 2022-10-28
 categories: ["diary", "Pythonista3"]
 tags: ["Python", "objc_util", "Vision"]
 menu: main
+draft: true
 ---
 
 # Pythonista3 でVison Framework

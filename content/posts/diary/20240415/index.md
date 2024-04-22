@@ -4,6 +4,7 @@ date: 2024-04-15
 categories: ["diary" ]
 tags: ["memo"]
 menu: main
+draft: true
 ---
 
 ## 転職用書類作成

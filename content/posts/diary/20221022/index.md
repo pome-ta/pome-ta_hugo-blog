@@ -4,6 +4,7 @@ date: 2022-10-21
 categories: ["diary", "programming"]
 tags: ["Swift"]
 menu: main
+draft: false
 ---
 # SwiftUI をやってみる
 

@@ -4,6 +4,7 @@ date: 2024-04-14
 categories: ["diary" ]
 tags: ["memo"]
 menu: main
+draft: true
 ---
 
 ## 本格的に転職の準備をはじめている
