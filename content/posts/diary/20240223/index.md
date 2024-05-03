@@ -49,3 +49,7 @@ font-jetbrains-mono obsidian  zoom
 gimp   runjs
 
 ```
+
+## ただいま！
+
+とりまここまで
