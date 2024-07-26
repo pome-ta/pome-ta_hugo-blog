@@ -1,0 +1,16 @@
+---
+title: "p5.js (と、sound) のメモ"
+date: 2024-07-26
+categories: ["diary"]
+tags: ["memo"]
+menu: main
+draft: true
+---
+
+# p5.js
+
+呼び出し
+
+## sound
+
+なにかと色々変わっている？
