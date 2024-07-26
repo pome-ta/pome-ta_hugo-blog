@@ -1,13 +1,13 @@
 ---
-title: "p5.js (と、sound) のメモ"
+title: "p5"
 date: 2024-07-26
-categories: ["diary"]
+categories: ["diary" ]
 tags: ["memo"]
 menu: main
 draft: true
 ---
 
-# p5.js
+## p5.js
 
 呼び出し
 
