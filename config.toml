@@ -17,7 +17,7 @@ paginate = 20
 # 自己紹介
 [Author]
     name = "pome-ta"
-    bio = "よろしくお願いします。"
+    bio = "（自称）iPhone でのコーディング時間世界一を名乗らせてもらってます。GitHubで毎日草生やし中。対戦よろしくお願いします。"
     avatar = "img/avatar.jpg"
 
 [Params]
