@@ -4,7 +4,7 @@ date: 2024-07-26
 categories: ["diary" ]
 tags: ["memo"]
 menu: main
-draft: true
+draft: false
 ---
 
 ## p5.js
