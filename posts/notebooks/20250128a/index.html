@@ -187,6 +187,38 @@
 軽い気持ちでビルドしたので詳細確認までは未実施。</p>
 <p><a href=https://github.com/ColdGrub1384/Pyto/tree/cd3b3de23fa22b5db9ddaea6b87b6c6fef3a4e69/site-packages>Pyto/site-packages at cd3b3de23fa22b5db9ddaea6b87b6c6fef3a4e69 · ColdGrub1384/Pyto · GitHub</a></p>
 <p><code>./site-packages</code> に、モリモリとモジュールは入ったので、検証確認が必要そうなものたちをごっそりと持っていく</p>
+<h2 id=カジュアルな考え>カジュアルな考え</h2>
+<ul>
+<li>Pythonista3 では、
+<ul>
+<li>VieeController(NavigationController) を実装</li>
+<li>App 自体の<code>rootViewController</code> を取得</li>
+<li>MainThred 上で
+<ul>
+<li>取得したController から<code>.presentViewController</code> で実装Controller を差し込む</li>
+</ul>
+</li>
+<li><code>.dismissViewControllerAnimated_</code> で閉じる</li>
+<li><code>visibleViewController = self.visibleViewController</code> と、ViewController 呼んでる</li>
+<li><code>self.</code> で、NavgationController 自体を閉じてもいいかも？</li>
+</ul>
+</li>
+</ul>
+<p>(Pyto は一旦置いておいて)a-shell だと、なにかしらのViewController の<code>.viewDidDisappear_</code> で落ちる</p>
+<p>また、落ちない場合もあり、再現性として不明。</p>
+<h3 id=まずまず>まずまず</h3>
+<ul>
+<li>Pyto で、toga とrubicon-objc が使われている</li>
+<li>toga のlifecycle の挙動に倣いたい
+<ul>
+<li>toga のオブジェクトとして、rubicon をwrap している</li>
+</ul>
+</li>
+<li>Pyto も、自身のViewController から生やしている様子</li>
+</ul>
+<p>という感じなので、toga オブジェクトとなっているところをrubicon のオブジェクトにまで剥がし、a-shell で実行できるようにしたい</p>
+<p>だけども、現在Pythonista3 とa-shell でasyncio するときに、<code>loop.run_forever(lifecycle=iOSLifecycle())</code> としておらず、<code>loop = asyncio.new_event_loop()</code> で走っちゃってるのよな。。。</p>
+<p>Pyto でも、<code>loop.run_forever(lifecycle=iOSLifecycle())</code> で動かしているみたいなのよね・・・</p>
 </div>
 <footer class=post__footer>
 <div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
