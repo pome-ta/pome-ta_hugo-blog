@@ -41,3 +41,4 @@ draft: false
 [Pyto/site-packages at cd3b3de23fa22b5db9ddaea6b87b6c6fef3a4e69 · ColdGrub1384/Pyto · GitHub](https://github.com/ColdGrub1384/Pyto/tree/cd3b3de23fa22b5db9ddaea6b87b6c6fef3a4e69/site-packages)
 
 `./site-packages` に、モリモリとモジュールは入ったので、検証確認が必要そうなものたちをごっそりと持っていく
+
