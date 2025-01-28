@@ -42,3 +42,40 @@ draft: false
 
 `./site-packages` に、モリモリとモジュールは入ったので、検証確認が必要そうなものたちをごっそりと持っていく
 
+
+## カジュアルな考え
+
+- Pythonista3 では、
+  - VieeController(NavigationController) を実装
+  - App 自体の`rootViewController` を取得
+  - MainThred 上で
+    - 取得したController から`.presentViewController` で実装Controller を差し込む
+  -  `.dismissViewControllerAnimated_` で閉じる
+    - `visibleViewController = self.visibleViewController` と、ViewController 呼んでる
+    - `self.` で、NavgationController 自体を閉じてもいいかも？
+
+(Pyto は一旦置いておいて)a-shell だと、なにかしらのViewController の`.viewDidDisappear_` で落ちる
+
+また、落ちない場合もあり、再現性として不明。
+
+
+### まずまず
+
+- Pyto で、toga とrubicon-objc が使われている
+- toga のlifecycle の挙動に倣いたい
+  - toga のオブジェクトとして、rubicon をwrap している
+- Pyto も、自身のViewController から生やしている様子
+
+という感じなので、toga オブジェクトとなっているところをrubicon のオブジェクトにまで剥がし、a-shell で実行できるようにしたい
+
+
+だけども、現在Pythonista3 とa-shell でasyncio するときに、`loop.run_forever(lifecycle=iOSLifecycle())` としておらず、`loop = asyncio.new_event_loop()` で走っちゃってるのよな。。。
+
+
+Pyto でも、`loop.run_forever(lifecycle=iOSLifecycle())` で動かしているみたいなのよね・・・
+
+
+
+
+
+
