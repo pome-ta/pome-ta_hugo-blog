@@ -49,7 +49,7 @@ draft: false
   - VieeController(NavigationController) を実装
   - App 自体の`rootViewController` を取得
   - MainThred 上で
-    - 取得したController から`.presentViewController` で実装Controller を差し込む
+    - 取得したController から`.presentViewController_` で実装Controller を差し込む
   -  `.dismissViewControllerAnimated_` で閉じる
     - `visibleViewController = self.visibleViewController` と、ViewController 呼んでる
     - `self.` で、NavgationController 自体を閉じてもいいかも？
@@ -59,7 +59,9 @@ draft: false
 また、落ちない場合もあり、再現性として不明。
 
 
-### まずまず
+### まずまず、つらつらと。。。
+
+#### 参照先実装の要件を剥がしていきたい
 
 - Pyto で、toga とrubicon-objc が使われている
 - toga のlifecycle の挙動に倣いたい
@@ -73,6 +75,45 @@ draft: false
 
 
 Pyto でも、`loop.run_forever(lifecycle=iOSLifecycle())` で動かしているみたいなのよね・・・
+
+
+#### App 上でPython が走るということは、どうゆうことや？
+
+Pyto やa-shell のPython 実行の動きを確認しなきゃなんとも言えないけども、App 自体のViewController から差し込んでおるので、閉じたら閉じて欲しい。
+とはいえ、`.presentViewController_` は、MainThred 上でないと、落ちるからその辺をケアしたい。
+
+
+思いつきで、[UISheetPresentationController | Apple Developer Documentation](https://developer.apple.com/documentation/uikit/uisheetpresentationcontroller?language=objc) で表示させたりしてみるけど、結局のところ独自View を表示させるためにワンクッション入れているだけな印象なので、意味はないかも。
+
+
+
+#### life cycle とは？
+
+toga では、iOS のlifecycle はずっとぶん回す(という雑な理解) かたちでの実装をしているが、Pythonista3 で`eventloop.py` を呼び出すときには、`iOSLifecycle` を使わないと実行ができる。
+
+toga は、無の状態(と、表現をしていいのか？) からのスタートだから、そういった仕様としている？でもPyto も同じ？(いや、オーバーライド時に上書きして消してる？)
+
+
+### Pyto のコードで気になる部分追っかけ
+
+
+- [pyto_ui.py #L8039](https://github.com/pome-ta/pystaRubiconObjcSandBox/blob/1571e7898b69459fdc0538cfaaf6dcd9efe372aa/sandbox/pytoTest/intoPytoModules/Lib/pyto_ui.py#L8039) `def show_view_controller(view_controller: "UIViewController"):`
+  - [#Using UIViewController | pyto_ui — Pyto documentation](https://pyto.readthedocs.io/en/latest/library/pyto_ui.html#using-uiviewcontroller)
+
+
+
+#### Semaphore
+
+- [Pyto/Pyto/Model/Python Bridging/PyMainThread.swift at main · pome-ta/Pyto · GitHub](https://github.com/pome-ta/Pyto/blob/main/Pyto/Model/Python%20Bridging/PyMainThread.swift)
+  - `let semaphore = Python.Semaphore(value: 0)` ってところ
+- [Semaphoreを使ってPythonの非同期処理の平行処理数をコントロールする](https://zenn.dev/yosemat/articles/39c36d0ed88a7c)
+- [【Swift】@escaping属性のクロージャとは #Xcode - Qiita](https://qiita.com/imchino/items/48564b0c23a64f539060)
+
+#### Python を埋め込む
+
+- [iOSのSwift,Objective-CでPythonを呼び出す #Python - Qiita](https://qiita.com/Hiroki_Kawakami/items/830baa5adcce5e483764)
+- [1. 他のアプリケーションへの Python の埋め込み — Python 3.10.16 ドキュメント](https://docs.python.org/ja/3.10/extending/embedding.html)
+
 
 
 
