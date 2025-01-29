@@ -195,7 +195,7 @@
 <li>App 自体の<code>rootViewController</code> を取得</li>
 <li>MainThred 上で
 <ul>
-<li>取得したController から<code>.presentViewController</code> で実装Controller を差し込む</li>
+<li>取得したController から<code>.presentViewController_</code> で実装Controller を差し込む</li>
 </ul>
 </li>
 <li><code>.dismissViewControllerAnimated_</code> で閉じる</li>
@@ -206,7 +206,8 @@
 </ul>
 <p>(Pyto は一旦置いておいて)a-shell だと、なにかしらのViewController の<code>.viewDidDisappear_</code> で落ちる</p>
 <p>また、落ちない場合もあり、再現性として不明。</p>
-<h3 id=まずまず>まずまず</h3>
+<h3 id=まずまずつらつらと>まずまず、つらつらと。。。</h3>
+<h4 id=参照先実装の要件を剥がしていきたい>参照先実装の要件を剥がしていきたい</h4>
 <ul>
 <li>Pyto で、toga とrubicon-objc が使われている</li>
 <li>toga のlifecycle の挙動に倣いたい
@@ -219,6 +220,36 @@
 <p>という感じなので、toga オブジェクトとなっているところをrubicon のオブジェクトにまで剥がし、a-shell で実行できるようにしたい</p>
 <p>だけども、現在Pythonista3 とa-shell でasyncio するときに、<code>loop.run_forever(lifecycle=iOSLifecycle())</code> としておらず、<code>loop = asyncio.new_event_loop()</code> で走っちゃってるのよな。。。</p>
 <p>Pyto でも、<code>loop.run_forever(lifecycle=iOSLifecycle())</code> で動かしているみたいなのよね・・・</p>
+<h4 id=app-上でpython-が走るということはどうゆうことや>App 上でPython が走るということは、どうゆうことや？</h4>
+<p>Pyto やa-shell のPython 実行の動きを確認しなきゃなんとも言えないけども、App 自体のViewController から差し込んでおるので、閉じたら閉じて欲しい。
+とはいえ、<code>.presentViewController_</code> は、MainThred 上でないと、落ちるからその辺をケアしたい。</p>
+<p>思いつきで、<a href="https://developer.apple.com/documentation/uikit/uisheetpresentationcontroller?language=objc">UISheetPresentationController | Apple Developer Documentation</a> で表示させたりしてみるけど、結局のところ独自View を表示させるためにワンクッション入れているだけな印象なので、意味はないかも。</p>
+<h4 id=life-cycle-とは>life cycle とは？</h4>
+<p>toga では、iOS のlifecycle はずっとぶん回す(という雑な理解) かたちでの実装をしているが、Pythonista3 で<code>eventloop.py</code> を呼び出すときには、<code>iOSLifecycle</code> を使わないと実行ができる。</p>
+<p>toga は、無の状態(と、表現をしていいのか？) からのスタートだから、そういった仕様としている？でもPyto も同じ？(いや、オーバーライド時に上書きして消してる？)</p>
+<h3 id=pyto-のコードで気になる部分追っかけ>Pyto のコードで気になる部分追っかけ</h3>
+<ul>
+<li><a href=https://github.com/pome-ta/pystaRubiconObjcSandBox/blob/1571e7898b69459fdc0538cfaaf6dcd9efe372aa/sandbox/pytoTest/intoPytoModules/Lib/pyto_ui.py#L8039>pyto_ui.py #L8039</a> <code>def show_view_controller(view_controller: "UIViewController"):</code>
+<ul>
+<li><a href=https://pyto.readthedocs.io/en/latest/library/pyto_ui.html#using-uiviewcontroller>#Using UIViewController | pyto_ui — Pyto documentation</a></li>
+</ul>
+</li>
+</ul>
+<h4 id=semaphore>Semaphore</h4>
+<ul>
+<li><a href=https://github.com/pome-ta/Pyto/blob/main/Pyto/Model/Python%20Bridging/PyMainThread.swift>Pyto/Pyto/Model/Python Bridging/PyMainThread.swift at main · pome-ta/Pyto · GitHub</a>
+<ul>
+<li><code>let semaphore = Python.Semaphore(value: 0)</code> ってところ</li>
+</ul>
+</li>
+<li><a href=https://zenn.dev/yosemat/articles/39c36d0ed88a7c>Semaphoreを使ってPythonの非同期処理の平行処理数をコントロールする</a></li>
+<li><a href=https://qiita.com/imchino/items/48564b0c23a64f539060>【Swift】@escaping属性のクロージャとは #Xcode - Qiita</a></li>
+</ul>
+<h4 id=python-を埋め込む>Python を埋め込む</h4>
+<ul>
+<li><a href=https://qiita.com/Hiroki_Kawakami/items/830baa5adcce5e483764>iOSのSwift,Objective-CでPythonを呼び出す #Python - Qiita</a></li>
+<li><a href=https://docs.python.org/ja/3.10/extending/embedding.html>1. 他のアプリケーションへの Python の埋め込み — Python 3.10.16 ドキュメント</a></li>
+</ul>
 </div>
 <footer class=post__footer>
 <div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5.0 11V3C0 1.5.8.8.8.8S1.5.0 3 0h8c1.5.0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 100-6 3 3 0 000 6z"/></svg>
