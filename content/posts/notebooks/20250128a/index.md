@@ -117,6 +117,10 @@ toga は、無の状態(と、表現をしていいのか？) からのスター
 
 
 
+## 次回
 
+> [`rubicon-objc` と`a-Shall` と - pome-ta_hugo-blog](https://pome-ta.github.io/pome-ta_hugo-blog/posts/notebooks/20250201a/)
+
+なんとなくの解決編
 
 
